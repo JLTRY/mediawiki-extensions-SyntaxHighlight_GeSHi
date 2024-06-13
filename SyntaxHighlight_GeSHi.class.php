@@ -137,7 +137,7 @@ class SyntaxHighlight_GeSHi {
 		$parser->getOutput()->addHeadItem( self::buildHeadItem( $geshi ), "source-{$lang}" );
 
 		if ( $wgUseSiteCss ) {
-			$parser->getOutput()->addModuleStyles( 'ext.geshi.local' );
+			$parser->getOutput()->addModuleStyles( ['ext.geshi.local'] );
 		}
 
 		$encloseTag = $enclose === GESHI_HEADER_NONE ? 'span' : 'div';
@@ -283,7 +283,7 @@ class SyntaxHighlight_GeSHi {
 				$output->addHeadItem( "source-$lang", self::buildHeadItem( $geshi ) );
 				$output->addHTML( "<div dir=\"ltr\">{$out}</div>" );
 				if( $wgUseSiteCss ) {
-					$output->addModuleStyles( 'ext.geshi.local' );
+					$output->addModuleStyles( ['ext.geshi.local'] );
 				}
 				return false;
 			}
@@ -338,7 +338,7 @@ class SyntaxHighlight_GeSHi {
 				$output->setText( "<div dir=\"ltr\">{$out}</div>" );
 
 				if( $wgUseSiteCss ) {
-					$output->addModuleStyles( 'ext.geshi.local' );
+					$output->addModuleStyles( ['ext.geshi.local'] );
 				}
 				return false;
 			}

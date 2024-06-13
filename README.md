@@ -4,23 +4,23 @@ for updated informations:
 
     http://www.mediawiki.org/wiki/Extension:SyntaxHighlight_GeSHi
 
-== Requirements ==
+### Requirements 
 
-This version of the extension has been tested with GeSHi 1.0.8.11 and MediaWiki 1.24
-as of 2014-05-10. It may or may not work with earlier versions of the aforementioned
+This version of the extension has been tested with GeSHi '1.0.8.12-wmf1'  and MediaWiki 1.41.1
+It may or may not work with earlier versions of the aforementioned
 software. To get releases of this extension compatible with earlier versions of
 MediaWiki, visit: 
 
     http://www.mediawiki.org/wiki/Special:ExtensionDistributor/SyntaxHighlight_GeSHi
 
 
-== Installation ==
+### Installation
 
 Add this line to your LocalSettings.php:
 
 	require_once("extensions/SyntaxHighlight_GeSHi/SyntaxHighlight_GeSHi.php");
 
-== Usage ==
+### Usage
 
 On the wiki page, you can now use "source" elements:
 
@@ -34,7 +34,7 @@ html text
 ?>
 </source>
 
-== Parameters ==
+### Parameters 
 
 Please see the documentation of GeSHi on http://qbnz.com/highlighter/geshi-doc.html
 for detailed information to use some of the parameters.
@@ -44,14 +44,14 @@ for detailed information to use some of the parameters.
 * start;	Corresponds to start_line_numbers_at method on GeSHi
 * strict;	Corresponds to enable_strict_mode method on GeSHi
 
-== Note ==
+### Note 
 
 GeSHi is generous about creating HTML elements: highlighting large blocks of
 code can easily generate enough of them to crash a browser. As a guard, symbol
 highlighting is turned off for code fragments larger than 100 kB. For fragments
 larger than 200 kB, string highlighting is turned off as well.
 
-== Note to maintainers ==
+### Note to maintainers 
 
 Whenever updating the version of GeSHi embedded in the extension, run
 maintenance/updateLanguageList.php to re-generate the list of supported
