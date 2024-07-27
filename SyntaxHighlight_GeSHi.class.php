@@ -50,7 +50,7 @@ class SyntaxHighlight_GeSHi {
 	 * @param Parser $parser
 	 * @return string
 	 */
-	public static function parserHook( $text, $args = array(), $parser ) {
+	public static function parserHook( $text, $args = array(), $parser = NULL ) {
 		global $wgSyntaxHighlightDefaultLang, $wgUseSiteCss, $wgUseTidy;
 		wfProfileIn( __METHOD__ );
 		self::initialise();
