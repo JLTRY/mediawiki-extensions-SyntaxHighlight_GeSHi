@@ -56,9 +56,11 @@ class SyntaxHighlight_GeSHi {
 		self::initialise();
 		// Replace strip markers (For e.g. {{#tag:syntaxhighlight|<nowiki>...}})
 		$text = $parser->getStripState()->unstripNoWiki( $text );
-		$text = rtrim( $text );
-		// Don't trim leading spaces away, just the linefeeds
-		$text = preg_replace( '/^\n+/', '', $text );
+		if ($text) {
+			$text = rtrim( $text );
+			// Don't trim leading spaces away, just the linefeeds
+			$text = preg_replace( '/^\n+/', '', $text );
+		}
 
 		// Validate language
 		if( isset( $args['lang'] ) && $args['lang'] ) {
@@ -429,7 +431,10 @@ class SyntaxHighlight_GeSHi {
 	private static function formatLanguageError( $text ) {
 		$msg = wfMessage( 'syntaxhighlight-err-language' )->inContentLanguage()->escaped();
 		$error = self::formatError( $msg, $text );
-		return $error . '<pre>' . htmlspecialchars( $text ) . '</pre>';
+		if ($text) {
+			$text = htmlspecialchars( $text );
+		}
+		return $error . '<pre>' . $text . '</pre>';
 	}
 
 	/**
